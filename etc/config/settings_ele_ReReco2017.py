@@ -18,6 +18,7 @@ flags = {
     'passingMVA94XwpLisoV2'    : '(passingMVA94XwpLisoV2 == 1)',
     'passingMVA94XwpLnoisoV2'  : '(passingMVA94XwpLnoisoV2 == 1)',
     'passingMVA94XwpHZZisoV2'  : '(passingMVA94XwpHZZisoV2 == 1)',
+    'passingMiniISOMVALnoisoV2': '((passingMVA94XwpLoosenoisoV2 == 1) && (el_miniIsoAll_fall17 < 0.4))',
     }
 
 baseOutDir = 'results/ReReco2017/tnpEleID/'
@@ -42,6 +43,10 @@ samplesDef['data'].add_sample( tnpSamples.ReReco2017['data_Run2017C'] )
 samplesDef['data'].add_sample( tnpSamples.ReReco2017['data_Run2017D'] )
 samplesDef['data'].add_sample( tnpSamples.ReReco2017['data_Run2017E'] )
 samplesDef['data'].add_sample( tnpSamples.ReReco2017['data_Run2017F'] )
+
+samplesDef['mcNom'].add_sample( tnpSamples.ReReco2017['DY_1j_madgraphext'] )
+samplesDef['mcAlt'].add_sample( tnpSamples.ReReco2017['DY_amcatnlo'] )
+samplesDef['tagSel'].add_sample( tnpSamples.ReReco2017['DY_1j_madgraphext'] )
 
 ## some sample-based cuts... general cuts defined here after
 ## require mcTruth on MC DY samples and additional cuts
@@ -81,8 +86,7 @@ if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/s
 #############################################################
 biningDef = [
    { 'var' : 'el_sc_eta' , 'type': 'float', 'bins': [-2.5,-2.0,-1.566,-1.4442, -0.8, 0.0, 0.8, 1.4442, 1.566, 2.0, 2.5] },
-   { 'var' : 'el_pt' , 'type': 'float', 'bins': [10,20,35,50,100,200,500] },
-
+   { 'var' : 'el_pt' , 'type': 'float', 'bins': [15,25,35,50,100,200,500] },
 
 ]
 

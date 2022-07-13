@@ -15,6 +15,7 @@ flags = {
     'passingMVA94Xwp90isoV2' : '(passingMVA94Xwp90isoV2 == 1)',
     'passingMVA94Xwp80noisoV2' : '(passingMVA94Xwp80noisoV2 == 1)',
     'passingMVA94Xwp90noisoV2' : '(passingMVA94Xwp90noisoV2 == 1)',
+    'passingMiniISOMVALnoisoV2': '((passingMVA94XwpLoosenoisoV2 == 1) && (el_miniIsoAll_fall17 < 0.4))',
     }
 
 baseOutDir = 'results/ReReco2018/tnpEleID/'
@@ -38,6 +39,8 @@ samplesDef = {
 samplesDef['data'].add_sample( tnpSamples.ReReco2018['data_Run2018B'] )
 samplesDef['data'].add_sample( tnpSamples.ReReco2018['data_Run2018C'] )
 samplesDef['data'].add_sample( tnpSamples.ReReco2018['data_Run2018D'] )
+
+samplesDef['mcAlt'].add_sample( tnpSamples.ReReco2018['DY_amcatnloext'] )
 
 
 ## some sample-based cuts... general cuts defined here after
@@ -79,7 +82,7 @@ if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/s
 #############################################################
 biningDef = [
    { 'var' : 'el_sc_eta' , 'type': 'float', 'bins': [-2.5,-2.0,-1.566,-1.4442, -0.8, 0.0, 0.8, 1.4442, 1.566, 2.0, 2.5] },
-   { 'var' : 'el_pt' , 'type': 'float', 'bins': [10,20,35,50,100,200,500] },
+   { 'var' : 'el_pt' , 'type': 'float', 'bins': [15,25,35,50,100,200,500] },
 
 
 ]
