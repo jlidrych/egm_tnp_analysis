@@ -183,3 +183,12 @@ The settings (for example [settings_pho_UL2017.py](etc/config/settings_pho_UL201
 ```bash
 export  PYTHONPATH=$PYTHONPATH:/afs/cern.ch/user/s/soffi/scratch0/TEST/CMSSW-10-0-0-pre3/src/egm_tnp_analysis 
 ```
+
+# Note
+I used:
+```
+etc\config\settings_ele_LegacyReReco2016.py
+etc\config\settings_ele_ReReco2017.py
+etc\config\settings_ele_ReReco2018.py
+```
+Flag (working point): ```passingMiniISOMVALnoisoV2``` - scale factor for miniISO & LooseIDnoisov2
